@@ -1,0 +1,85 @@
+﻿<Window x:Class="Exam.Tourist"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Exam"
+        mc:Ignorable="d"
+        Title="Tourist Guide" Height="1000" Width="1850">
+    <Window.Resources>
+
+        <Style x:Key="MenuStyle" TargetType="StackPanel">
+            <Setter Property="Background" Value="#BA55D3" />
+        </Style>
+
+        <Style x:Key="MainStyle" TargetType="StackPanel">
+            <Setter Property="Background" Value="#EE82EE" />
+        </Style>
+
+        <Style x:Key="ListBoxStyle" TargetType="ListBox">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Black" />
+        </Style>
+
+        <Style x:Key="MenuBottomStyle" TargetType="StackPanel">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="323" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Style="{StaticResource ResourceKey=MenuStyle}">
+            <ListBox x:Name="listCountryes" BorderBrush="Black" MouseDoubleClick="listCountryesList_MouseDoubleClick" Style="{StaticResource ResourceKey=ListBoxStyle}">
+
+                <ListBoxItem Content="Norway"  />
+                <ListBoxItem Content="Ukraine"  />
+                <ListBoxItem Content="Japan"  />
+                <ListBoxItem Content="USA"  />
+
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel x:Name="Option"   Grid.Row="1" Style="{StaticResource ResourceKey=MenuStyle}">
+            <Label Content="Option" BorderBrush="Black"/>
+
+            <CheckBox x:Name="optionDanger" Content="Danger" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Style="{StaticResource ResourceKey=MenuStyle}">
+            <RadioButton x:Name="pdf" Content=".pdf" />
+            <RadioButton x:Name="doc" Content=".doc" IsChecked="true" />
+            <RadioButton x:Name="txt" Content=".txt" />
+
+            <Button Content="Save" Background="BlueViolet" BorderBrush="Black" Click="Button_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.RowSpan="3" Style="{StaticResource ResourceKey=MainStyle}" Margin="0,-10,0,10">
+
+            <Label x:Name="name" HorizontalAlignment="Center" FontSize="20" />
+            <Label x:Name="city" />
+            <Label x:Name="description" />
+            <Label x:Name="facts" />
+            <Label x:Name="timeZone" />
+            <Label x:Name="weather" />
+            <Label x:Name="attractions" />
+            <Label x:Name="currency" />
+            <Label x:Name="test" />
+            <Label x:Name="danger" />
+            <Label x:Name="price" />
+            <Image x:Name="image" />
+
+        </StackPanel>
+    </Grid>
+</Window>
